@@ -1,8 +1,8 @@
 # Default ignored files
-/target/
+target/
 /shelf/
 /workspace.xml
 .mvn/
 mvnwgit
 mvnw.cmd
-/.idea/
+.idea/
