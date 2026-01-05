@@ -1,12 +1,10 @@
 package com.example.automation.interactions;
 
-import com.example.automation.ui.LoginPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
-import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.targets.Target;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class EnterCredential implements Interaction {
 
@@ -15,13 +13,14 @@ public class EnterCredential implements Interaction {
     private final Target element;
 
     //Constructor
-    public EnterCredential(Target element, String value) {
-        this.element = element;
+    public EnterCredential(String value, Target element) {
         this.value = value;
+        this.element = element;
     }
 
-    public static EnterCredential here(Target element, String value) {
-    return Tasks.instrumented(EnterCredential.class, element, value);
+    //Metodo Here de EnterCredential con sus respectivos parámetros
+    public static EnterCredential here(String value, Target element) {
+    return instrumented(EnterCredential.class, value, element);
     }
 
     @Override

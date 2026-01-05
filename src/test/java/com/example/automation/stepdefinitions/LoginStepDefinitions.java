@@ -16,11 +16,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class LoginStepDefinitions {
 
-    @Before
-    public void setTheStage() {
-        OnStage.setTheStage(new OnlineCast());
-    }
-
     @Given("that {string} is on the login page")
     public void thatUserIsOnTheLoginPage(String actorName) {
         OnStage.theActorCalled(actorName).attemptsTo(
