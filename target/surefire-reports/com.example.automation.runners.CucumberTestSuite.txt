@@ -1,4 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: com.example.automation.runners.CucumberTestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.427 s -- in com.example.automation.runners.CucumberTestSuite
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 61.01 s <<< FAILURE! -- in com.example.automation.runners.CucumberTestSuite
+El usuario hace login en SauceDemo.Successful login #2 -- Time elapsed: 7.179 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: "Producte"
+     but: was "Products"
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:397)
+	at com.example.automation.stepdefinitions.LoginStepDefinitions.heShouldSeeTheDashboardWithTitle(LoginStepDefinitions.java:35)
+	at ✽.he should see the dashboard with title "Producte"(file:///C:/Users/diego.ciocca/Desktop/SerenityAutomationProject/SerenityAutomationProject/src/test/resources/features/login.feature:17)
+

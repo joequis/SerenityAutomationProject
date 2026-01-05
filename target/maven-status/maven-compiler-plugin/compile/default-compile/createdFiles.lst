@@ -1,9 +1,11 @@
 com\example\automation\utils\DataReader.class
 com\example\automation\utils\JsonDataReader$1.class
+com\example\automation\interactions\ClickElement.class
 com\example\automation\utils\ExcelDataReader.class
 com\example\automation\tasks\Login.class
 com\example\automation\model\LoginData.class
 com\example\automation\ui\LoginPage.class
 com\example\automation\utils\JsonDataReader.class
 com\example\automation\ui\DashboardPage.class
+com\example\automation\interactions\EnterCredential.class
 com\example\automation\questions\DashboardTitle.class

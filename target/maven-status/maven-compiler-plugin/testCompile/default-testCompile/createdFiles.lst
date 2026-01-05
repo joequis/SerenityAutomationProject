@@ -1,2 +1,3 @@
 com\example\automation\stepdefinitions\LoginStepDefinitions.class
+com\example\automation\Hooks\Hooks.class
 com\example\automation\runners\CucumberTestSuite.class
