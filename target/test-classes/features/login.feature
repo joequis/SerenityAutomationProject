@@ -1,9 +1,6 @@
-Feature: Login to SauceDemo
+Feature: El usuario hace login en SauceDemo
 
-  As a user
-  I want to log in to the application
-  So that I can access the products
-
+  @demo @happyPath
   Scenario Outline: Successful login
     Given that "User" is on the login page
     When he logs in with credentials "<username>" and "<password>"
@@ -12,3 +9,13 @@ Feature: Login to SauceDemo
     Examples:
       | username      | password     | title    |
       | standard_user | secret_sauce | Products |
+
+  @demo  @unHappyPath
+  Scenario Outline: Successful login
+    Given that "User" is on the login page
+    When he logs in with credentials "<username>" and "<password>"
+    Then he should see the dashboard with title "<title>"
+
+    Examples:
+      | username      | password     | title    |
+      | standard_user | secret_sauce | Producte |

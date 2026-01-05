@@ -1,11 +1,10 @@
 package com.example.automation.tasks;
 
-import com.example.automation.ui.LoginPage;
+import com.example.automation.interactions.EnterCredential;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
-
+import com.example.automation.interactions.ClickElement;
+import static com.example.automation.ui.LoginPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Login implements Task {
@@ -25,9 +24,9 @@ public class Login implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(username).into(LoginPage.USERNAME_FIELD),
-                Enter.theValue(password).into(LoginPage.PASSWORD_FIELD),
-                Click.on(LoginPage.LOGIN_BUTTON)
+                EnterCredential.here(username, USERNAME_FIELD),
+                EnterCredential.here(password, PASSWORD_FIELD),
+                ClickElement.on(LOGIN_BUTTON)
         );
     }
 }

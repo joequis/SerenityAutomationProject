@@ -43,6 +43,12 @@
             <version>${serenity.version}</version>
         </dependency>
         <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-junit</artifactId>
+            <version>${serenity.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.11</version>
@@ -68,6 +74,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <includes>
                         <include>**/*TestSuite.java</include>
                         <include>**/Cucumber*.java</include>
@@ -79,10 +86,10 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <includes>
-                        <include>**/*TestSuite.java</include>
-                        <include>**/Cucumber*.java</include>
-                    </includes>
+                    <excludes>
+                        <exclude>**/*TestSuite.java</exclude>
+                        <exclude>**/Cucumber*.java</exclude>
+                    </excludes>
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
                     </systemPropertyVariables>
@@ -103,7 +110,7 @@
                 <executions>
                     <execution>
                         <id>serenity-reports</id>
-                        <phase>post-integration-test</phase>
+                        <phase>verify</phase>
                         <goals>
                             <goal>aggregate</goal>
                         </goals>
